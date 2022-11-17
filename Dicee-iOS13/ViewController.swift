@@ -22,6 +22,12 @@ class ViewController: UIViewController {
        
     }
 
-
+    @IBAction func rollButtonAction(_ sender: UIButton) {
+        print("But got clicked")
+        ImageView2.image = UIImage(imageLiteralResourceName: "DiceOne")
+        ImageView2.alpha = 1
+        
+    }
+    
 }
 
