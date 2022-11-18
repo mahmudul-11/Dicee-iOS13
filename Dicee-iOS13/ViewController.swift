@@ -2,30 +2,40 @@
 //  ViewController.swift
 //  Dicee-iOS13
 //
-//  Created by Angela Yu on 11/06/2019.
-//  Copyright © 2019 London App Brewery. All rights reserved.
+//  Created by Mahmudul Hasan on 15/11/2022.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
     //called the imageView here and made them as variable
-    @IBOutlet weak var imageView1: UIImageView!
+    @IBOutlet weak var imageViewOne: UIImageView!
+    @IBOutlet weak var ImageViewTwo: UIImageView!
     
-    @IBOutlet weak var ImageView2: UIImageView!
+    var imageArray = [
+        UIImage(imageLiteralResourceName: "DiceOne"),
+        UIImage(imageLiteralResourceName: "DiceTwo"),
+        UIImage(imageLiteralResourceName: "DiceThree"),
+        UIImage(imageLiteralResourceName: "DiceFour"),
+        UIImage(imageLiteralResourceName: "DiceFive"),
+        UIImage(imageLiteralResourceName: "DiceSix")
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        imageView1.image = UIImage(imageLiteralResourceName: "DiceSix")
-        ImageView2.image = UIImage(imageLiteralResourceName: "DiceTwo")
-        ImageView2.alpha = 0.5
+        imageViewOne.image = UIImage(imageLiteralResourceName: "DiceSix")
+        ImageViewTwo.image = UIImage(imageLiteralResourceName: "DiceTwo")
+        imageViewOne.alpha = 0.1
+        ImageViewTwo.alpha = 0.1
        
     }
 
     @IBAction func rollButtonAction(_ sender: UIButton) {
         print("But got clicked")
-        ImageView2.image = UIImage(imageLiteralResourceName: "DiceOne")
-        ImageView2.alpha = 1
+        imageViewOne.alpha = 1
+        ImageViewTwo.alpha = 1
+        imageViewOne.image = imageArray[Int.random(in: 0...5)]
+        ImageViewTwo.image = imageArray[Int.random(in: 0...5)]
         
     }
     
